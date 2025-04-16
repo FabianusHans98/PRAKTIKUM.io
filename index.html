@@ -1,0 +1,138 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LAPORAN TEORI</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <style id="styleMode">
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            padding: 20px;
+        }
+
+        h1, h2 {
+            text-align: center;
+        }
+
+        .section {
+            margin: 20px 0;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            background-color: #fff;
+        }
+
+        .btn-toggle {
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>LAPORAN TEORI</h1>
+    <h2>Fabianus Hans Hamonangan Lumban Tobing | 037</h2>
+
+    <button onclick="toggleStyle()" class="btn btn-primary btn-toggle">Ganti Tampilan</button>
+
+    <div class="section">
+        <h3 onclick="confirmHide('content1')">1. Mengapa menggunakan CSS dan JavaScript dalam pemrograman web?</h3>
+        <div id="content1">
+            <p>CSS digunakan untuk mempercantik tampilan web, mengatur layout, warna, font, dan efek visual agar lebih menarik dan mudah dibaca. JavaScript digunakan untuk membuat halaman web menjadi interaktif, seperti menangani event pengguna (klik, input), memanipulasi elemen HTML secara dinamis, dan membuat aplikasi web menjadi lebih responsif dan dinamis.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3 onclick="confirmHide('content2')">2. Bagaimana CSS dan JavaScript dapat diintegrasikan dalam pemrograman web?</h3>
+        <div id="content2">
+            <p>CSS dapat diintegrasikan langsung menggunakan tag <code>&lt;style&gt;</code> di dalam <code>&lt;head&gt;</code>, atau melalui file eksternal menggunakan <code>&lt;link&gt;</code>. JavaScript dapat ditulis dalam tag <code>&lt;script&gt;</code> atau file terpisah dan dihubungkan dengan <code>&lt;script src="..."&gt;</code>. Keduanya digunakan untuk memisahkan antara logika (JS), gaya (CSS), dan struktur (HTML).</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3 onclick="confirmHide('content3')">3. Jelaskan apa saja keuntungan menggunakan JavaScript dan CSS?</h3>
+        <div id="content3">
+            <p>Keuntungan CSS: mempercepat proses desain, membuat tampilan lebih konsisten, dan meningkatkan UX/UI. Keuntungan JavaScript: meningkatkan interaktivitas, mengurangi beban server, mempercepat respon halaman tanpa reload, dan memungkinkan pembuatan aplikasi web kompleks.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3 onclick="confirmHide('content4')">4. Jelaskan apa saja keuntungan menggunakan Bootstrap?</h3>
+        <div id="content4">
+            <p>Bootstrap adalah framework CSS yang membantu mempercepat pembuatan UI yang responsif. Keuntungannya adalah hemat waktu, mobile-first, sudah tersedia banyak komponen siap pakai (seperti navbar, tombol, form), serta dukungan grid system yang kuat.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h3 onclick="confirmHide('content5')">5. Contoh Penggunaan Bootstrap dan Fungsinya</h3>
+        <div id="content5">
+            <p>Berikut contoh penggunaan komponen tombol Bootstrap:</p>
+            <pre><code>&lt;button class="btn btn-success"&gt;Klik Saya&lt;/button&gt;</code></pre>
+            <p>Fungsinya adalah untuk membuat tombol dengan tampilan menarik dan standar Bootstrap tanpa perlu menulis CSS tambahan.</p>
+            <p>Hasilnya:</p>
+            <button class="btn btn-success">Klik Saya</button>
+            <p><strong>Screenshot Hasil (Simulasi):</strong></p>
+            <img src="Screenshot.png" alt="Contoh Screenshot" width="800">
+        </div>
+    </div>
+
+    <script>
+        function confirmHide(id) {
+            if (confirm('Apakah Anda ingin menyembunyikan bagian ini?')) {
+                const content = document.getElementById(id);
+                if (content) content.style.display = 'none';
+            }
+        }
+
+        let isBadStyle = false;
+
+        function toggleStyle() {
+            const styleTag = document.getElementById('styleMode');
+            if (!isBadStyle) {
+                styleTag.innerHTML = `
+                    body {
+                        font-family: Comic Sans MS;
+                        background-color: #ff69b4;
+                        color: yellow;
+                        padding: 20px;
+                    }
+                    h1, h2 {
+                        text-align: left;
+                    }
+                    .section {
+                        margin: 10px;
+                        padding: 20px;
+                        background-color: lime;
+                        color: red;
+                        border: 5px dashed blue;
+                    }
+                `;
+                isBadStyle = true;
+            } else {
+                styleTag.innerHTML = `
+                    body {
+                        font-family: Arial, sans-serif;
+                        background-color: #f0f0f0;
+                        color: #333;
+                        padding: 20px;
+                    }
+                    h1, h2 {
+                        text-align: center;
+                    }
+                    .section {
+                        margin: 20px 0;
+                        padding: 15px;
+                        border: 1px solid #ccc;
+                        border-radius: 10px;
+                        background-color: #fff;
+                    }
+                `;
+                isBadStyle = false;
+            }
+        }
+    </script>
+</body>
+</html>
